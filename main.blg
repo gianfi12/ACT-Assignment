@@ -10,45 +10,45 @@ Warning--empty year in SlideReverse
 Warning--can't use both author and editor fields in paperInstrumentation
 Warning--empty publisher in paperInstrumentation
 Warning--empty publisher in 1566145
-You've used 5 entries,
+You've used 4 entries,
             2118 wiz_defined-function locations,
-            524 strings with 4753 characters,
-and the built_in function-call counts, 1385 in all, are:
-= -- 110
-> -- 83
+            517 strings with 4638 characters,
+and the built_in function-call counts, 1139 in all, are:
+= -- 86
+> -- 70
 < -- 0
-+ -- 33
-- -- 28
-* -- 100
-:= -- 247
-add.period$ -- 13
-call.type$ -- 5
-change.case$ -- 25
++ -- 28
+- -- 24
+* -- 85
+:= -- 201
+add.period$ -- 10
+call.type$ -- 4
+change.case$ -- 20
 chr.to.int$ -- 0
-cite$ -- 12
-duplicate$ -- 58
-empty$ -- 106
-format.name$ -- 28
-if$ -- 270
+cite$ -- 11
+duplicate$ -- 48
+empty$ -- 89
+format.name$ -- 24
+if$ -- 221
 int.to.chr$ -- 0
-int.to.str$ -- 5
-missing$ -- 9
-newline$ -- 26
-num.names$ -- 10
-pop$ -- 50
+int.to.str$ -- 4
+missing$ -- 8
+newline$ -- 21
+num.names$ -- 8
+pop$ -- 47
 preamble$ -- 1
-purify$ -- 24
+purify$ -- 20
 quote$ -- 0
-skip$ -- 31
+skip$ -- 22
 stack$ -- 0
-substring$ -- 25
-swap$ -- 6
+substring$ -- 20
+swap$ -- 5
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 12
+type$ -- 8
 warning$ -- 7
-while$ -- 10
-width$ -- 6
-write$ -- 45
+while$ -- 8
+width$ -- 5
+write$ -- 34
 (There were 7 warnings)
