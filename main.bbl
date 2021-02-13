@@ -1,0 +1,27 @@
+\begin{thebibliography}{1}
+
+\bibitem{articleOpensource}
+Jaap-Henk Hoepman and Bart Jacobs.
+\newblock Increased security through open source.
+\newblock {\em Communications of the ACM}, 50, 02 2008.
+
+\bibitem{SlidePackers}
+Mario Polino.
+\newblock {\em Packers and Evasive Techniques Slide}.
+
+\bibitem{SlideReverse}
+Mario Polino.
+\newblock {\em Reverse Egineering Slide}.
+
+\bibitem{paperInstrumentation}
+Mario Polino, Andrea Continella, Sebastiano Mariani, Stefano D'Alessio, Lorenzo
+  Fontana, Fabio Gritti, and Stefano Zanero.
+\newblock {\em Measuring and Defeating Anti-Instrumentation-Equipped Malware}.
+\newblock 2017.
+
+\bibitem{1566145}
+S.~K. {Udupa}, S.~K. {Debray}, and M.~{Madou}.
+\newblock {\em Deobfuscation: reverse engineering obfuscated code}.
+\newblock 2005.
+
+\end{thebibliography}
