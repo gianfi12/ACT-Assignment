@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2020.5.13)  13 FEB 2021 23:35
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2020.5.13)  16 FEB 2021 09:43
 entering extended mode
  \write18 enabled.
  file:line:error style messages enabled.
@@ -541,11 +541,7 @@ runsystem(rm main.aex)...executed.
 File: l3backend-pdfmode.def 2020-02-03 L3 backend support: PDF mode
 \l__kernel_color_stack_int=\count315
 \l__pdf_internal_box=\box70
-) (./main.aux
-
-LaTeX Warning: Label `fig:decompilationoutput' multiply defined.
-
-)
+) (./main.aux)
 \openout1 = `main.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 19.
@@ -623,106 +619,74 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <5> on input line 30.
  [1
 
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
-<images/redocumentation.pdf, id=47, 722.7pt x 542.025pt>
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] [2]
+Overfull \hbox (36.36943pt too wide) in paragraph at lines 54--56
+\OT1/cmr/m/n/10 The pro-cess of \OT1/cmr/bx/n/10 Re-verse En-gi-neer-ing \OT1/cmr/m/n/10 pass through 2 main stages, the $[]$
+ []
+
+<images/redocumentation.pdf, id=59, 722.7pt x 542.025pt>
 File: images/redocumentation.pdf Graphic file (type pdf)
 <use images/redocumentation.pdf>
-Package pdftex.def Info: images/redocumentation.pdf  used on input line 57.
+Package pdftex.def Info: images/redocumentation.pdf  used on input line 62.
 (pdftex.def)             Requested size: 345.0pt x 258.74649pt.
- [2] [3 <./images/redocumentation.pdf>]
-<images/graphview.png, id=79, 1077.02374pt x 833.1125pt>
+[3
+
+ <./images/redocumentation.pdf>]
+<images/graphview.png, id=82, 1077.02374pt x 833.1125pt>
 File: images/graphview.png Graphic file (type png)
 <use images/graphview.png>
-Package pdftex.def Info: images/graphview.png  used on input line 78.
+Package pdftex.def Info: images/graphview.png  used on input line 83.
 (pdftex.def)             Requested size: 345.0pt x 266.86841pt.
-<images/ghidra.png, id=81, 1371.1225pt x 741.77126pt>
+<images/ghidra.png, id=84, 1371.1225pt x 741.77126pt>
 File: images/ghidra.png Graphic file (type png)
 <use images/ghidra.png>
-Package pdftex.def Info: images/ghidra.png  used on input line 85.
+Package pdftex.def Info: images/ghidra.png  used on input line 90.
 (pdftex.def)             Requested size: 345.0pt x 186.64212pt.
-<images/coderead.png, id=82, 221.3871pt x 18.5493pt>
+<images/coderead.png, id=85, 221.3871pt x 18.5493pt>
 File: images/coderead.png Graphic file (type png)
 <use images/coderead.png>
-Package pdftex.def Info: images/coderead.png  used on input line 92.
+Package pdftex.def Info: images/coderead.png  used on input line 97.
 (pdftex.def)             Requested size: 345.0pt x 28.9079pt.
- [4 <./images/graphview.png>]
-<images/universe.jpg, id=92, 102.3825pt x 73.9563pt>
-File: images/universe.jpg Graphic file (type jpg)
-<use images/universe.jpg>
-Package pdftex.def Info: images/universe.jpg  used on input line 102.
-(pdftex.def)             Requested size: 241.49895pt x 174.4597pt.
- (./images/stack_representation_example.pgf (/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryshapes.multipart.code.tex
-File: tikzlibraryshapes.multipart.code.tex 2020/01/08 v3.1.5b (3.1.5b)
- (/usr/share/texlive/texmf-dist/tex/generic/pgf/libraries/shapes/pgflibraryshapes.multipart.code.tex
-File: pgflibraryshapes.multipart.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-\pgfnodepartlowerbox=\box73
-\pgfnodeparttwobox=\box74
-\pgfnodepartthreebox=\box75
-\pgfnodepartfourbox=\box76
-\pgfnodeparttwentybox=\box77
-\pgfnodepartnineteenbox=\box78
-\pgfnodeparteighteenbox=\box79
-\pgfnodepartseventeenbox=\box80
-\pgfnodepartsixteenbox=\box81
-\pgfnodepartfifteenbox=\box82
-\pgfnodepartfourteenbox=\box83
-\pgfnodepartthirteenbox=\box84
-\pgfnodeparttwelvebox=\box85
-\pgfnodepartelevenbox=\box86
-\pgfnodeparttenbox=\box87
-\pgfnodepartninebox=\box88
-\pgfnodeparteightbox=\box89
-\pgfnodepartsevenbox=\box90
-\pgfnodepartsixbox=\box91
-\pgfnodepartfivebox=\box92
-)) (/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarycalc.code.tex
-File: tikzlibrarycalc.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-) (/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarypositioning.code.tex
-File: tikzlibrarypositioning.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-) (/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarypatterns.code.tex
-File: tikzlibrarypatterns.code.tex 2020/01/08 v3.1.5b (3.1.5b)
- (/usr/share/texlive/texmf-dist/tex/generic/pgf/libraries/pgflibrarypatterns.code.tex
-File: pgflibrarypatterns.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-)) (/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarybackgrounds.code.tex
-File: tikzlibrarybackgrounds.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-\pgf@layerbox@background=\box93
-\pgf@layerboxsaved@background=\box94
-))
+ [4] [5 <./images/graphview.png> <./images/ghidra.png>] [6 <./images/coderead.png>]
+<images/strace.png, id=116, 841.9455pt x 458.31226pt>
+File: images/strace.png Graphic file (type png)
+<use images/strace.png>
+Package pdftex.def Info: images/strace.png  used on input line 123.
+(pdftex.def)             Requested size: 345.0pt x 187.79733pt.
+ [7
+
+ <./images/strace.png>]
 \openout3 = `main.pyg'.
 
  (./_minted-main/default-pyg-prefix.pygstyle) (./_minted-main/fruity.pygstyle) (./_minted-main/EE5F8FD1D4DBA34CFCC28D5F5A9054B3DF4FD7C361A5DF08F0316FD9CBCB059F.pygtex
 LaTeX Font Info:    Font shape `OT1/cmtt/bx/n' in size <10> not available
 (Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 2.
-) [5 <./images/ghidra.png> <./images/coderead.png>] (./_minted-main/68DB3A980F78326529D373B451DF795AB50D743AF0C7EBF736ADEAACB83F2609.pygtex)
-Package hyperref Info: bookmark level for unknown listing defaults to 0 on input line 136.
- [6 <./images/universe.jpg>] (./main.bbl) [7]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 147.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 147.
+) (./_minted-main/68DB3A980F78326529D373B451DF795AB50D743AF0C7EBF736ADEAACB83F2609.pygtex)
+Package hyperref Info: bookmark level for unknown listing defaults to 0 on input line 157.
+ (./main.bbl [8]) [9]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 168.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 168.
  (./main.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 147.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 147.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 168.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 168.
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 12DE4CA57C62052001FD1276569E2AEE;261.
-
-
-LaTeX Warning: There were multiply-defined labels.
-
+(rerunfilecheck)             Checksum: 4D7DCAF096AFA80322827B8B870750C5;330.
 runsystem(rm main.pyg)...executed.
 
  ) 
 Here is how much of TeX's memory you used:
- 30637 strings out of 483183
- 744240 string characters out of 5966292
- 1137293 words of memory out of 5000000
- 45055 multiletter control sequences out of 15000+600000
+ 29611 strings out of 483183
+ 711800 string characters out of 5966292
+ 1086840 words of memory out of 5000000
+ 44048 multiletter control sequences out of 15000+600000
  537778 words of font info for 43 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 63i,8n,98p,877b,1839s stack positions out of 5000i,500n,10000p,200000b,80000s
- </home/gianfi/.texlive2019/texmf-var/fonts/pk/ljfour/jknappen/ec/tcrm1000.600pk></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmitt10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt8.pfb>
-Output written on main.pdf (7 pages, 361584 bytes).
+ 63i,8n,98p,877b,609s stack positions out of 5000i,500n,10000p,200000b,80000s
+ </home/gianfi/.texlive2019/texmf-var/fonts/pk/ljfour/jknappen/ec/tcrm1000.600pk></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmitt10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt8.pfb>
+Output written on main.pdf (9 pages, 404456 bytes).
 PDF statistics:
- 178 PDF objects out of 1000 (max. 8388607)
- 142 compressed objects within 2 object streams
- 30 named destinations out of 1000 (max. 500000)
- 90 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 202 PDF objects out of 1000 (max. 8388607)
+ 168 compressed objects within 2 object streams
+ 38 named destinations out of 1000 (max. 500000)
+ 86 words of extra memory for PDF output out of 10000 (max. 10000000)
 
