@@ -91,6 +91,8 @@ The output of the Decompilation part can be read mode easily since it will be so
     \caption{Ghidra GUI after analyzing an executable file.}
     \label{fig:ghidraoutput}
 \end{figure}
+Different tools exists that allows to perform decompilation of an executable. Most famous one are \textit{Ghidra} and \textit{IDA Pro}. Figure \ref{fig:ghidraoutput} show an example output of Ghidra. The reference of supported architecture for decompilation can be found here \footnote{\url{https://en.wikipedia.org/wiki/Ghidra}}.
+Ghidra makes use of automated tools that helps in generating the source code starting from the executable. From interface we can look at the whole space of the object file: from the address of the library, to the assembly code, to the constant variables loaded inside the file.
 The readability of the output depends on the quality of the tool used to decompile and on the present metadata, but it is more than recommended a user inspection of code, for example to better understand the type of the variable.
 \begin{figure}[htp]
     \centering
@@ -114,22 +116,109 @@ From this analysis we can take a look at the:
     \item \textbf{Control flow}: the code is broke down into block, that merged together instructions that will be executed sequentially, this separation in block can be done by looking at how the control instructions are placed, like if or while loop \ref{fig:decompilationoutput}, in this way we can try to understand which is the path block executed by the program sequentially, so we can follow the execution flow;
     \item \textbf{Data Flow}: helps in understanding how the data flows inside the program, from the input we can give to the program to the final outcome of its execution.
 \end{itemize}
-//TODO
 
 \paragraph{Dynamic Analysis}
 Opposed to Static the Dynamic Analysis instead rely on the execution of the program regarding on the input provided to it. In this case we try to launch the executable with different inputs and look at the different outcome we got.
 \begin{figure}[htp]
     \centering
     \includegraphics[width=1\textwidth]{images/strace.png}
-    \caption{The possible output of strace after an executable execution.}
+    \caption{The output of an analysis with strace}
     \label{fig:strace}
 \end{figure}
 And by looking at the output returned by the executable we try to guess what the program does. We can also use some other tools to understand what the executable does by looking at the system calls invocation done by it, in this case we can user \textit{strace}\footnote{\url{https://en.wikipedia.org/wiki/Strace}}. As we can see in figure \ref{fig:strace} the output will make a summary of the various system calls done by a certain program.
-\textit{Strace} allows to analysis how the executable access to the privileged kernel mode, how the program switch its execution from user mode to kernel mode. Other tools that can be used are \textit{ltrace} and \textit{ptrace}.
+\textit{Strace} allows to analysis how the executable access to the privileged kernel mode, how the program switch its execution from user mode to kernel mode. Other tools that can be used are \textit{ltrace} and \textit{ptrace}. In general you can look to the access made by the program to the disk memory, to the network usage of the program, etc\dots.
+\begin{figure}[htp]
+    \centering
+    \includegraphics[width=1\textwidth]{images/gdb.png}
+    \caption{The output of GDB during a program execution.}
+    \label{fig:gdb}
+\end{figure}
+Another example of a useful tool that can be used during Dynamic Analysis we have to be able to analyze the behavior of the program as long as it is executing: in this case we can take advantage of \textit{Debbuger}, that permits to execute an executable in a controlled environment in which we are able to follow the progress of the program\footnote{\url{https://en.wikipedia.org/wiki/Debugger}}. By using breakpoints to stop executions, we can find out the code that is actually executed by the program, and also take a look and modify the content of the registers.
+Image \ref{fig:gdb} shows an example of a well known and used debugger: \textit{GDB}. It is quite used debugger that works for different programming languages like C, C++, Pascal, Fortran, etc\dots.
+The image shows an example of its usage after hitting a breakpoint: GDB shows the content of the registers and at which line in the assembly code the execution of the program has reached. You can for example use GDB in order to create a dump of the memory that you can better analyze with want we have seen in \ref{section:redocumentation} to better understand whats happening.
+Note that \ref{fig:gdb} shows also to which line of the source code the assembly line corresponds. Obviously this will not be possible in most of the case when doing Reverse Engineering, since who has made the executable want to make our job harder.
 
-//TODO introduce debugger
+\subsection{Which is the best strategy to adopt?}
+\begin{figure}[htp]
+    \centering
+    \includegraphics[width=1\textwidth]{images/staticAndDynamic.pdf}
+    \caption{Relationship among Static and Dynamic Analysis.}
+    \label{fig:gdb}
+\end{figure}
+One can wonder which approach should choose among the two we have seen: if the best idea is to use \textit{Dynamic} or \textit{Static} analysis. Both have disadvantages and advantages: for example static analysis allows to reach an higher code coverage, but if the analyzed software use some obfuscation technique it may be the case that some behavior is shown only during the execution of the program( is the case of packer\citep{packer}).
+But dynamic analysis has a low code coverage, and so some details in the behavior of a program can be missed by a dynamic analysis.
+All of this to highlight how the best approach to use is to use both of them in combination, doing static analysis while also doing dynamic analysis, based on the situation we are dealing with. 
+So you need to adapt you approach regarding to the software you are approaching to analyze, as we should see in the next example.
 
-//TODO make another section with an image with the relation between static and dynamic analysis, and how to use them togheter
+\clearpage
+
+\section{keycheck\_baby}
+In this section we will cover how someone can approach a real example, that in this case is the \textit{keycheck\_baby} CTF.
+In order to decide which approach we should use we can execute try to analyze the header of the file under analysis with the command as in:
+\begin{minted}[linenos, bgcolor=white, escapeinside=!!]{bash}
+    $ file keycheck_baby
+\end{minted}
+In our case as output you will get
+\begin{minted}[linenos, bgcolor=white, escapeinside=!!]{bash}
+    keycheck_baby: ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, interpreter /lib64/ld-linux-x86-64.so.2, BuildID[sha1]=7c050cd827cea1dfa736ac05bbac7b343fbf1d01, for GNU/Linux 3.2.0, not stripped
+\end{minted}
+The important part here is that the executable is \textit{not stripped}\footnote{\url{https://en.wikipedia.org/wiki/Stripped_binary}}, this means that the executable contains also debug information that can be used both by a debugger but it also helps during the decompilation process.
+Other important information can be returned by running the following command:
+\begin{minted}[linenos, bgcolor=white, escapeinside=!!]{bash}
+    $ checksec keycheck_baby
+\end{minted}
+Which gives as output:
+\begin{minted}[linenos, bgcolor=white, escapeinside=!!]{bash}
+    Arch:     amd64-64-little
+    RELRO:    Partial RELRO
+    Stack:    Canary found
+    NX:       NX enabled
+    PIE:      PIE enabled
+\end{minted}
+Partial RELRO means that only small parts of the GOT and PLT are writable, while a canary aims in avoiding canaries. NX enabled makes the stack not executable and PIE allows the code to be relocatable in case ASLR is active.
+The next step is to start a decompilator to try and analyze the decompiled executable. In our case we will use Ghidra. Ghidra will analyze the executable, and then we can look at the output of the disassemble and decompilation.
+First we need to find the entry point of the execution that can be easily found by searching inside the \textit{Symbol Tree} the \textit{main}, in order to a reconstruction of the source code:
+\begin{figure}[htp]
+    \centering
+    \includegraphics[width=1\textwidth]{images/ghidrakeycheck.png}
+    \caption{The output of GDB after analyzing the keycheck executable.}
+    \label{fig:keycheckgdb}
+\end{figure}
+By taking a look a the code we can see that no obfuscation technique has been used since the whole code is there: so we can use as an approach static analysis, because there aren't some part that are crypted, and there isn't no code that is used to generate other code, in that case we should have used dynamic analysis
+in order to look at the code during execution or in order to do a dump file of the memory.
+As we have seen in \ref{fig:coderead} in order to make things easier is a good idea to check if we can improve the code readability by retyping variable and assign a different name to them.
+For example by saying that the input of the \textit{memset} function is a \textit{char *} in our case.
+Now we will take a look at the most important part of the code.
+This first part will take as input the flag and it will store it inside the \textit{input} variable. It checks that the string terminate with the string terminator.
+At the next step the input is compared with the \textit{flag\{} string:
+\begin{minted}[linenos, bgcolor=black, escapeinside=!!]{c}
+  iVar1 = strncmp(input,"flag{",5);
+  if (iVar1 == 0) {
+    puts("He\'s just a poor n00b, from a poor ctf team");
+    sVar2 = strlen(input);
+    if (*(char *)((long)&input + sVar2) == '}') {
+\end{minted}
+and also verifies that the flag ends with a \textit{\}}.
+Now the program checks the first 0xd(13) characters of the input string, by accessing it with the \textit{index}. And it checks that the value of the input string at index elevated
+at the casted int value of the relative character present in the \textit{babuzz} string at position index % 6. 
+\begin{minted}[linenos, bgcolor=black, escapeinside=!!]{c}
+    index = 0;
+    while (index < 0xd) {
+        if ((byte)(input[(long)(int)index] ^ "babuzz"[(ulong)(long)(int)index % 6]) !=
+            magic0[(long)(int)index]) goto LAB_00101487;
+        index = index + 1;
+    }
+\end{minted}
+If this is not the case the flow of execution jumps at the end of the code at the label \textit{LAB\_00101487} before checking the canary.
+\begin{minted}[linenos, bgcolor=black, escapeinside=!!]{c}
+    LAB_00101487:
+    if (local_10 == *(long *)(in_FS_OFFSET + 0x28)) {
+        return 0;
+    }
+\end{minted}
+//TODO
+
+
 
 \subsection{Example of code}
 Here you can fine an example of how to add some code. It is using the package minted with basic option enabled.

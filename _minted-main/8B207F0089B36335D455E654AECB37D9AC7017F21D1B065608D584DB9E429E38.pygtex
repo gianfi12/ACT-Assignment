@@ -1,0 +1,4 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{x}{    \PYGZbs{}begin\PYGZob{}minted\PYGZcb{}[linenos, bgcolor=white, escapeinside=!!]\PYGZob{}bash\PYGZcb{}}
+\PYG{x}{    \PYGZdl{} file keycheck\PYGZus{}baby}
+\end{Verbatim}

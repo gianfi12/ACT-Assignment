@@ -1,0 +1,6 @@
+\begin{Verbatim}[commandchars=\\\{\},codes={\catcode`\$=3\catcode`\^=7\catcode`\_=8}]
+    \PYG{n+nl}{LAB\PYGZus{}00101487}\PYG{p}{:}
+    \PYG{k}{if} \PYG{p}{(}\PYG{n}{local\PYGZus{}10} \PYG{o}{=}\PYG{o}{=} \PYG{o}{*}\PYG{p}{(}\PYG{k+kt}{long} \PYG{o}{*}\PYG{p}{)}\PYG{p}{(}\PYG{n}{in\PYGZus{}FS\PYGZus{}OFFSET} \PYG{o}{+} \PYG{l+m+mh}{0x28}\PYG{p}{)}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+        \PYG{k}{return} \PYG{l+m+mi}{0}\PYG{p}{;}
+    \PYG{p}{\PYGZcb{}}
+\end{Verbatim}

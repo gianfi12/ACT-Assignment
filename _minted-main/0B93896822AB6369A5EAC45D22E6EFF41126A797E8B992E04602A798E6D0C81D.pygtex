@@ -1,0 +1,7 @@
+\begin{Verbatim}[commandchars=\\\{\},codes={\catcode`\$=3\catcode`\^=7\catcode`\_=8}]
+  \PYG{n}{iVar1} \PYG{o}{=} \PYG{n}{strncmp}\PYG{p}{(}\PYG{n}{input}\PYG{p}{,}\PYG{l+s}{\PYGZdq{}}\PYG{l+s}{flag\PYGZob{}}\PYG{l+s}{\PYGZdq{}}\PYG{p}{,}\PYG{l+m+mi}{5}\PYG{p}{)}\PYG{p}{;}
+  \PYG{k}{if} \PYG{p}{(}\PYG{n}{iVar1} \PYG{o}{=}\PYG{o}{=} \PYG{l+m+mi}{0}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+    \PYG{n}{puts}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}}\PYG{l+s}{He}\PYG{l+s+se}{\PYGZbs{}\PYGZsq{}}\PYG{l+s}{s just a poor n00b, from a poor ctf team}\PYG{l+s}{\PYGZdq{}}\PYG{p}{)}\PYG{p}{;}
+    \PYG{n}{sVar2} \PYG{o}{=} \PYG{n}{strlen}\PYG{p}{(}\PYG{n}{input}\PYG{p}{)}\PYG{p}{;}
+    \PYG{k}{if} \PYG{p}{(}\PYG{o}{*}\PYG{p}{(}\PYG{k+kt}{char} \PYG{o}{*}\PYG{p}{)}\PYG{p}{(}\PYG{p}{(}\PYG{k+kt}{long}\PYG{p}{)}\PYG{o}{\PYGZam{}}\PYG{n}{input} \PYG{o}{+} \PYG{n}{sVar2}\PYG{p}{)} \PYG{o}{=}\PYG{o}{=} \PYG{l+s+sc}{\PYGZsq{}}\PYG{l+s+sc}{\PYGZcb{}}\PYG{l+s+sc}{\PYGZsq{}}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+\end{Verbatim}

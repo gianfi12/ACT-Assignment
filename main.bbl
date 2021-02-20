@@ -18,6 +18,11 @@ Mario Polino, Andrea Continella, Sebastiano Mariani, Stefano D'Alessio, Lorenzo
 \newblock {\em Measuring and Defeating Anti-Instrumentation-Equipped Malware}.
 \newblock 2017.
 
+\bibitem{packer}
+Kevin~A. Roundy and Barton~P. Miller.
+\newblock Binary-code obfuscations in prevalent packer tools.
+\newblock {\em ACM Comput. Surv.}, 46(1), July 2013.
+
 \bibitem{1566145}
 S.~K. {Udupa}, S.~K. {Debray}, and M.~{Madou}.
 \newblock {\em Deobfuscation: reverse engineering obfuscated code}.

@@ -1,0 +1,4 @@
+\begin{Verbatim}[commandchars=\\\{\},codes={\catcode`\$=3\catcode`\^=7\catcode`\_=8}]
+    \PYG{l+s+se}{\PYGZbs{}b}egin\PYG{o}{\PYGZob{}}minted\PYG{o}{\PYGZcb{}}\PYG{o}{[}linenos, \PYG{n+nv}{bgcolor}\PYG{o}{=}white, \PYG{n+nv}{escapeinside}\PYG{o}{=}\PYG{o}{]}\PYG{o}{\PYGZob{}}bash\PYG{o}{\PYGZcb{}}
+    \PYGZdl{} file keycheck\PYGZus{}baby
+\end{Verbatim}

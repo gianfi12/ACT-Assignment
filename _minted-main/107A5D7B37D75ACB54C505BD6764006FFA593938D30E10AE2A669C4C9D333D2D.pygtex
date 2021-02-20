@@ -1,0 +1,3 @@
+\begin{Verbatim}[commandchars=\\\{\},codes={\catcode`\$=3\catcode`\^=7\catcode`\_=8}]
+    keycheck\PYGZus{}baby: ELF \PYG{l+m}{64}\PYGZhy{}bit LSB shared object, x86\PYGZhy{}64, version \PYG{l+m}{1} \PYG{o}{(}SYSV\PYG{o}{)}, dynamically linked, interpreter /lib64/ld\PYGZhy{}linux\PYGZhy{}x86\PYGZhy{}64.so.2, BuildID\PYG{o}{[}sha1\PYG{o}{]}\PYG{o}{=}7c050cd827cea1dfa736ac05bbac7b343fbf1d01, \PYG{k}{for} GNU/Linux \PYG{l+m}{3}.2.0, not stripped
+\end{Verbatim}
