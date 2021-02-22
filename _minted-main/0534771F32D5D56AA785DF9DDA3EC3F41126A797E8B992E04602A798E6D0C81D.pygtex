@@ -1,0 +1,4 @@
+\begin{Verbatim}[commandchars=\\\{\},codes={\catcode`\$=3\catcode`\^=7\catcode`\_=8}]
+    \PYG{n}{puts}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}}\PYG{l+s}{Apparently we let go (:}\PYG{l+s}{\PYGZdq{}}\PYG{p}{)}\PYG{p}{;}
+    \PYG{n}{puts}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}}\PYG{l+s}{Your input looks like the correct flag }\PYG{l+s+se}{\PYGZbs{}\PYGZbs{}}\PYG{l+s}{(\PYGZca{}o\PYGZca{})/}\PYG{l+s}{\PYGZdq{}}\PYG{p}{)}\PYG{p}{;}
+\end{Verbatim}

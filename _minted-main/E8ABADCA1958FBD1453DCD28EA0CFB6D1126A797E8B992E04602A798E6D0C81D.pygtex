@@ -1,0 +1,11 @@
+\begin{Verbatim}[commandchars=\\\{\},codes={\catcode`\$=3\catcode`\^=7\catcode`\_=8}]
+    \PYG{n}{input} \PYG{o}{=} \PYG{n}{input} \PYG{o}{+} \PYG{l+m+mh}{0xd}\PYG{p}{;}
+    \PYG{n}{temp} \PYG{o}{=} \PYG{l+m+mi}{187}\PYG{p}{;}
+    \PYG{n}{index} \PYG{o}{=} \PYG{l+m+mi}{0}\PYG{p}{;}
+    \PYG{k}{while} \PYG{p}{(}\PYG{n}{index} \PYG{o}{\PYGZlt{}} \PYG{l+m+mh}{0xc}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+        \PYG{n}{temp} \PYG{o}{=} \PYG{n}{temp} \PYG{o}{+} \PYG{o}{*}\PYG{n}{input}\PYG{p}{;}
+        \PYG{n}{input} \PYG{o}{=} \PYG{n}{input} \PYG{o}{+} \PYG{l+m+mi}{1}\PYG{p}{;}
+        \PYG{k}{if} \PYG{p}{(}\PYG{n}{temp} \PYG{err}{!}\PYG{o}{=} \PYG{n}{magic1}\PYG{p}{[}\PYG{p}{(}\PYG{k+kt}{long}\PYG{p}{)}\PYG{p}{(}\PYG{k+kt}{int}\PYG{p}{)}\PYG{n}{index}\PYG{p}{]}\PYG{p}{)} \PYG{k}{goto} \PYG{n}{LAB\PYGZus{}00101487}\PYG{p}{;}
+            \PYG{n}{index} \PYG{o}{=} \PYG{n}{index} \PYG{o}{+} \PYG{l+m+mi}{1}\PYG{p}{;}
+    \PYG{p}{\PYGZcb{}}
+\end{Verbatim}

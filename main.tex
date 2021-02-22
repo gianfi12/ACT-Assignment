@@ -154,6 +154,7 @@ So you need to adapt you approach regarding to the software you are approaching 
 
 \section{keycheck\_baby}
 In this section we will cover how someone can approach a real example, that in this case is the \textit{keycheck\_baby} CTF.
+First of all the objective of this CTF is to find the correct flag( a string) as input that is accepted as correct by the executable.
 In order to decide which approach we should use we can execute try to analyze the header of the file under analysis with the command as in:
 \begin{minted}[linenos, bgcolor=white, escapeinside=!!]{bash}
     $ file keycheck_baby
@@ -199,8 +200,8 @@ At the next step the input is compared with the \textit{flag\{} string:
     if (*(char *)((long)&input + sVar2) == '}') {
 \end{minted}
 and also verifies that the flag ends with a \textit{\}}.
-Now the program checks the first 0xd(13) characters of the input string, by accessing it with the \textit{index}. And it checks that the value of the input string at index elevated
-at the casted int value of the relative character present in the \textit{babuzz} string at position index % 6. 
+At this point the program checks the first 0xd(13) characters of the input string, by accessing it with the \textit{index}. And it checks that the value of the input string at index elevated
+at the casted int value of the relative character present in the \textit{babuzz} string at position index \% 6 is the same as the value contained inside the global buffer \textit{maigc0}.
 \begin{minted}[linenos, bgcolor=black, escapeinside=!!]{c}
     index = 0;
     while (index < 0xd) {
@@ -209,6 +210,14 @@ at the casted int value of the relative character present in the \textit{babuzz}
         index = index + 1;
     }
 \end{minted}
+We can find the content of this global buffer from Ghidra, if we double click on it we get the output as in \ref{fig:magic0}.
+\begin{figure}[htp]
+    \centering
+    \includegraphics[width=1\textwidth]{images/ghidramagic0.png}
+    \caption{The output of GDB after analyzing the keycheck executable.}
+    \label{fig:magic0}
+\end{figure}
+The content of this buffer is represented by the byte stored at each address on the left in the hexadecimal notation.
 If this is not the case the flow of execution jumps at the end of the code at the label \textit{LAB\_00101487} before checking the canary.
 \begin{minted}[linenos, bgcolor=black, escapeinside=!!]{c}
     LAB_00101487:
@@ -216,40 +225,96 @@ If this is not the case the flow of execution jumps at the end of the code at th
         return 0;
     }
 \end{minted}
-//TODO
-
-
-
-\subsection{Example of code}
-Here you can fine an example of how to add some code. It is using the package minted with basic option enabled.
-You can write code in place:
-\begin{minted}[linenos, bgcolor=black, escapeinside=!!]{python}
-import numpy as np
-    
-def incmatrix(genl1,genl2):
-    m = len(genl1)
-    n = len(genl2) !\label{myline}!
-    M = None #to become the incidence matrix
-    VT = np.zeros((n*m,1), int)  #dummy variable
-    
-    #compute the bitwise xor matrix
-    M1 = bitxormatrix(genl1)
-    M2 = np.triu(bitxormatrix(genl2),1) 
-...
+The next check the executable does is the one in the next snippet of code: first it moves the input forward to the last tested value of it, then it uses a temp value that is initialize to a constant value: 187.
+\begin{minted}[linenos, bgcolor=black, escapeinside=!!]{c}
+    input = input + 0xd;
+    temp = 187;
+    index = 0;
+    while (index < 0xc) {
+        temp = temp + *input;
+        input = input + 1;
+        if (temp != magic1[(long)(int)index]) goto LAB_00101487;
+            index = index + 1;
+    }
 \end{minted}
-You can reference to a line
-The important line is line \ref{myline}.
+At each iteration it compares the content of this temp value and the content of another global buffer \textit{magic1} at the vale pointed by the index. Index that is incremented at each iteration until it reaches the value of \textit{0xc}(12).
+The value of temp is also updated at each iteration by adding the value contained in the input string at the character that is actually pointed at this iteration, and used for validation.
+Pay attention that the type of temp is \textit{char} or it must have a value in between 0 and 255.
+If the execution is able to pass all these checks it finally prints:
+\begin{minted}[linenos, bgcolor=black, escapeinside=!!]{c}
+    puts("Apparently we let go (:");
+    puts("Your input looks like the correct flag \\(^o^)/");
+\end{minted}
+So if we reach this part of code means that we've got the correct flag.
 
-You can use an external file and ave the code as listing.
-\begin{listing}[ht]
-\inputminted[linenos, bgcolor=black, escapeinside=!!]{python}{x.py}
-\caption{Example from external file}
-\label{listing:3}
-\end{listing}
- 
-The important line is line \ref{anotherline} of Listing~\ref{listing:3}.
+\subsection{Exploit}
+Up to know we have been able in this case to perform only static analysis: with all the information we've obtained with such an analysis we can try to write an exploit that is able to compute the correct flag.
+\begin{minted}[linenos, bgcolor=black, escapeinside=!!]{python}
+    # Get the content of the two buffer used during the checks
+    magic0 = 
+        b'\x1b\x51\x17\x2a\x1e\x4e\x3d\x10\x17\x46\x49\x14\x3d'
+    magic1 = 
+        b'\xeb\x51\xb0\x13\x85\xb9\x1c\x87\xb8\x26\x8d\x07'
+    babuzz = "babuzz"
+
+    # Firs part of the flag that is checked
+    flag = 'flag{'
+
+    # This is the first check done by the executable
+    # It checks the content of character of the string from
+    # position len("flag{") to len("flag{")+12 against magic0
+    # And its aim is to find the correct printable character
+    # in range between 0 and 256 that pass the checks in the 
+    # given input position
+    for i in range(0,13):
+        for c in range(256):
+            # Add the value to the flag string if c
+            # elevated at the casted value to
+            # int of babuzz string at position i%6
+            if int(c) ^ ord(babuzz[i%6]) == magic0[i]:
+                flag = flag + chr(c)
+                break
+
+    # This is the second check done by the executable
+    # It checks the content of character of the string from
+    # position len("flag{")+13 to len("flag{")+25 against
+    # the content of magic1
+    # As before it checks the condition against all the
+    # printable character
+    # Start temp with a constant value
+    const = 187
+    for i in range(0,12):
+        for c in range(256):
+            # Update the value stored in temp, and cast
+            # it to be a char so it needs to have a value
+            # between 0 and 256, thus the % operation
+            temp = (const + c) % 256
+            if temp == magic1[i]:
+                const = temp
+                flag = flag + chr(c)
+                break
+
+    # Add to the obtained flag the closing character
+    flag = flag + "}"
+
+    # Finally print the obtained flag
+    print(flag)
+\end{minted}
+This python script has been written by taking advantage of the information we have got during static analysis. It has been written by trying to emulate the behavior of the executable reconstructed after disassembling it.
+It assumes that the characters present inside the flag are printable ASCI character, so their int value goes from 0 to 255. The python script replicate che checks done by the executable and tries to find among all the printable characters 
+the ones that are able to pass such checks.
+So if we run the script we get as output:
+\begin{minted}[linenos, bgcolor=white, escapeinside=!!]{bash}
+    $ flag{y0u_d4_qu33n_0f_cr4ck1ngz}
+\end{minted}
+That is the flag accepted by the executable if provided to it as input.
+
 
 \section{Conclusion}
+This document provided an introduction to Reverse Engineering applied to the field of Software Engineering. It illustrates different techniques and approaches used in order to reverse engineering an executable from scratch, by using different tools.
+It also provided an example from a CTF, with the application of the previously introduced tools, and a way on how to crack such executable with the example of a working exploit.
+
+
 
 
 \bibliographystyle{plain}

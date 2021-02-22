@@ -1,0 +1,51 @@
+\begin{Verbatim}[commandchars=\\\{\},codes={\catcode`\$=3\catcode`\^=7\catcode`\_=8}]
+    \PYG{c+c1}{\PYGZsh{} Get the content of the two buffer used during the checks}
+    \PYG{n}{magic0} \PYG{o}{=}
+        \PYG{l+s+sa}{b}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+se}{\PYGZbs{}x1b}\PYG{l+s+se}{\PYGZbs{}x51}\PYG{l+s+se}{\PYGZbs{}x17}\PYG{l+s+se}{\PYGZbs{}x2a}\PYG{l+s+se}{\PYGZbs{}x1e}\PYG{l+s+se}{\PYGZbs{}x4e}\PYG{l+s+se}{\PYGZbs{}x3d}\PYG{l+s+se}{\PYGZbs{}x10}\PYG{l+s+se}{\PYGZbs{}x17}\PYG{l+s+se}{\PYGZbs{}x46}\PYG{l+s+se}{\PYGZbs{}x49}\PYG{l+s+se}{\PYGZbs{}x14}\PYG{l+s+se}{\PYGZbs{}x3d}\PYG{l+s+s1}{\PYGZsq{}}
+    \PYG{n}{magic1} \PYG{o}{=}
+        \PYG{l+s+sa}{b}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+se}{\PYGZbs{}xeb}\PYG{l+s+se}{\PYGZbs{}x51}\PYG{l+s+se}{\PYGZbs{}xb0}\PYG{l+s+se}{\PYGZbs{}x13}\PYG{l+s+se}{\PYGZbs{}x85}\PYG{l+s+se}{\PYGZbs{}xb9}\PYG{l+s+se}{\PYGZbs{}x1c}\PYG{l+s+se}{\PYGZbs{}x87}\PYG{l+s+se}{\PYGZbs{}xb8}\PYG{l+s+se}{\PYGZbs{}x26}\PYG{l+s+se}{\PYGZbs{}x8d}\PYG{l+s+se}{\PYGZbs{}x07}\PYG{l+s+s1}{\PYGZsq{}}
+    \PYG{n}{babuzz} \PYG{o}{=} \PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{babuzz}\PYG{l+s+s2}{\PYGZdq{}}
+
+    \PYG{c+c1}{\PYGZsh{} Firs part of the flag that is checked}
+    \PYG{n}{flag} \PYG{o}{=} \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{flag}\PYG{l+s+s1}{\PYGZob{}}\PYG{l+s+s1}{\PYGZsq{}}
+
+    \PYG{c+c1}{\PYGZsh{} This is the first check done by the executable}
+    \PYG{c+c1}{\PYGZsh{} It checks the content of character of the string from}
+    \PYG{c+c1}{\PYGZsh{} position len(\PYGZdq{}flag\PYGZob{}\PYGZdq{}) to len(\PYGZdq{}flag\PYGZob{}\PYGZdq{})+12 against magic0}
+    \PYG{c+c1}{\PYGZsh{} And its aim is to find the correct printable character}
+    \PYG{c+c1}{\PYGZsh{} in range between 0 and 256 that pass the checks in the}
+    \PYG{c+c1}{\PYGZsh{} given input position}
+    \PYG{k}{for} \PYG{n}{i} \PYG{o+ow}{in} \PYG{n+nb}{range}\PYG{p}{(}\PYG{l+m+mi}{0}\PYG{p}{,}\PYG{l+m+mi}{13}\PYG{p}{)}\PYG{p}{:}
+        \PYG{k}{for} \PYG{n}{c} \PYG{o+ow}{in} \PYG{n+nb}{range}\PYG{p}{(}\PYG{l+m+mi}{256}\PYG{p}{)}\PYG{p}{:}
+            \PYG{c+c1}{\PYGZsh{} Add the value to the flag string if c}
+            \PYG{c+c1}{\PYGZsh{} elevated at the casted value to}
+            \PYG{c+c1}{\PYGZsh{} int of babuzz string at position i\PYGZpc{}6}
+            \PYG{k}{if} \PYG{n+nb}{int}\PYG{p}{(}\PYG{n}{c}\PYG{p}{)} \PYG{o}{\PYGZca{}} \PYG{n+nb}{ord}\PYG{p}{(}\PYG{n}{babuzz}\PYG{p}{[}\PYG{n}{i}\PYG{o}{\PYGZpc{}}\PYG{l+m+mi}{6}\PYG{p}{]}\PYG{p}{)} \PYG{o}{==} \PYG{n}{magic0}\PYG{p}{[}\PYG{n}{i}\PYG{p}{]}\PYG{p}{:}
+                \PYG{n}{flag} \PYG{o}{=} \PYG{n}{flag} \PYG{o}{+} \PYG{n+nb}{chr}\PYG{p}{(}\PYG{n}{c}\PYG{p}{)}
+                \PYG{k}{break}
+
+    \PYG{c+c1}{\PYGZsh{} This is the second check done by the executable}
+    \PYG{c+c1}{\PYGZsh{} It checks the content of character of the string from}
+    \PYG{c+c1}{\PYGZsh{} position len(\PYGZdq{}flag\PYGZob{}\PYGZdq{})+13 to len(\PYGZdq{}flag\PYGZob{}\PYGZdq{})+25 against}
+    \PYG{c+c1}{\PYGZsh{} the content of magic1}
+    \PYG{c+c1}{\PYGZsh{} As before it checks the condition against all the}
+    \PYG{c+c1}{\PYGZsh{} printable character}
+    \PYG{c+c1}{\PYGZsh{} Start temp with a constant value}
+    \PYG{n}{const} \PYG{o}{=} \PYG{l+m+mi}{187}
+    \PYG{k}{for} \PYG{n}{i} \PYG{o+ow}{in} \PYG{n+nb}{range}\PYG{p}{(}\PYG{l+m+mi}{0}\PYG{p}{,}\PYG{l+m+mi}{12}\PYG{p}{)}\PYG{p}{:}
+        \PYG{k}{for} \PYG{n}{c} \PYG{o+ow}{in} \PYG{n+nb}{range}\PYG{p}{(}\PYG{l+m+mi}{256}\PYG{p}{)}\PYG{p}{:}
+            \PYG{c+c1}{\PYGZsh{} Update the value stored in temp, and cast}
+            \PYG{c+c1}{\PYGZsh{} it to be a char so it needs to have a value}
+            \PYG{c+c1}{\PYGZsh{} between 0 and 256, thus the \PYGZpc{} operation}
+            \PYG{n}{temp} \PYG{o}{=} \PYG{p}{(}\PYG{n}{const} \PYG{o}{+} \PYG{n}{c}\PYG{p}{)} \PYG{o}{\PYGZpc{}} \PYG{l+m+mi}{256}
+            \PYG{k}{if} \PYG{n}{temp} \PYG{o}{==} \PYG{n}{magic1}\PYG{p}{[}\PYG{n}{i}\PYG{p}{]}\PYG{p}{:}
+                \PYG{n}{const} \PYG{o}{=} \PYG{n}{temp}
+                \PYG{n}{flag} \PYG{o}{=} \PYG{n}{flag} \PYG{o}{+} \PYG{n+nb}{chr}\PYG{p}{(}\PYG{n}{c}\PYG{p}{)}
+                \PYG{k}{break}
+
+    \PYG{c+c1}{\PYGZsh{} Add to the obtained flag the closing character}
+    \PYG{n}{flag} \PYG{o}{=} \PYG{n}{flag} \PYG{o}{+} \PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{\PYGZcb{}}\PYG{l+s+s2}{\PYGZdq{}}
+
+    \PYG{c+c1}{\PYGZsh{} Finally print the obtained flag}
+    \PYG{n+nb}{print}\PYG{p}{(}\PYG{n}{flag}\PYG{p}{)}
+\end{Verbatim}
