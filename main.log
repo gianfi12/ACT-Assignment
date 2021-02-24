@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2020.5.13)  22 FEB 2021 23:11
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2020.5.13)  24 FEB 2021 11:44
 entering extended mode
  \write18 enabled.
  file:line:error style messages enabled.
@@ -665,7 +665,7 @@ Package pdftex.def Info: images/gdb.png  used on input line 132.
  [7
 
  <./images/strace.png>] [8 <./images/gdb.png>]
-<images/staticAndDynamic.pdf, id=153, 722.7pt x 542.025pt>
+<images/staticAndDynamic.pdf, id=154, 722.7pt x 542.025pt>
 File: images/staticAndDynamic.pdf Graphic file (type pdf)
 <use images/staticAndDynamic.pdf>
 Package pdftex.def Info: images/staticAndDynamic.pdf  used on input line 144.
@@ -686,17 +686,17 @@ LaTeX Font Info:    Font shape `OT1/cmtt/bx/n' in size <10> not available
 \openout3 = `main.pyg'.
 
  (./_minted-main/A8186F793CE41D7AB292434A65AA9B5BFA593938D30E10AE2A669C4C9D333D2D.pygtex)
-<images/ghidrakeycheck.png, id=174, 1927.2pt x 1084.05pt>
+<images/ghidrakeycheck.png, id=175, 1927.2pt x 1084.05pt>
 File: images/ghidrakeycheck.png Graphic file (type png)
 <use images/ghidrakeycheck.png>
 Package pdftex.def Info: images/ghidrakeycheck.png  used on input line 184.
 (pdftex.def)             Requested size: 345.0pt x 194.06194pt.
-LaTeX Font Info:    Trying to load font information for OMS+cmr on input line 194.
+LaTeX Font Info:    Trying to load font information for OMS+cmr on input line 193.
  (/usr/share/texlive/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 2019/12/16 v2.5j Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/it' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 194.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 193.
 \openout3 = `main.pyg'.
 
  [11
@@ -705,10 +705,10 @@ LaTeX Font Info:    Font shape `OMS/cmr/m/it' in size <10> not available
 \openout3 = `main.pyg'.
 
  (./_minted-main/6499D7FA04345F7C03DFEA45A415C5751126A797E8B992E04602A798E6D0C81D.pygtex)
-<images/ghidramagic0.png, id=184, 275.1078pt x 159.2349pt>
+<images/ghidramagic0.png, id=186, 275.1078pt x 159.2349pt>
 File: images/ghidramagic0.png Graphic file (type png)
 <use images/ghidramagic0.png>
-Package pdftex.def Info: images/ghidramagic0.png  used on input line 216.
+Package pdftex.def Info: images/ghidramagic0.png  used on input line 215.
 (pdftex.def)             Requested size: 345.0pt x 199.69672pt.
 \openout3 = `main.pyg'.
 
@@ -721,15 +721,15 @@ Package pdftex.def Info: images/ghidramagic0.png  used on input line 216.
  [13 <./images/ghidramagic0.png>] (./_minted-main/0534771F32D5D56AA785DF9DDA3EC3F41126A797E8B992E04602A798E6D0C81D.pygtex)
 \openout3 = `main.pyg'.
 
- (./_minted-main/E26EEB3EAE612EAB6353968213DBEF32DF4FD7C361A5DF08F0316FD9CBCB059F.pygtex) [14]
+ (./_minted-main/2252D03C89FE872749FF84B9638984A8DF4FD7C361A5DF08F0316FD9CBCB059F.pygtex) [14]
 \openout3 = `main.pyg'.
 
  (./_minted-main/AD4BCB8B3D78811E730BCD61DBA8BA38FA593938D30E10AE2A669C4C9D333D2D.pygtex) (./main.bbl [15]) [16]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 322.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 322.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 321.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 321.
  (./main.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 322.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 322.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 321.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 321.
 Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: F7591DC33AB1FED8CED1B3412A2A71C4;458.
 
@@ -742,16 +742,16 @@ runsystem(rm main.pyg)...executed.
 Here is how much of TeX's memory you used:
  29730 strings out of 483183
  716801 string characters out of 5966292
- 1092555 words of memory out of 5000000
+ 1093600 words of memory out of 5000000
  44117 multiletter control sequences out of 15000+600000
  537778 words of font info for 43 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  63i,8n,98p,877b,609s stack positions out of 5000i,500n,10000p,200000b,80000s
  </home/gianfi/.texlive2019/texmf-var/fonts/pk/ljfour/jknappen/ec/tcrm1000.600pk></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmitt10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt8.pfb>
-Output written on main.pdf (16 pages, 948824 bytes).
+Output written on main.pdf (16 pages, 948767 bytes).
 PDF statistics:
- 274 PDF objects out of 1000 (max. 8388607)
- 224 compressed objects within 3 object streams
+ 275 PDF objects out of 1000 (max. 8388607)
+ 225 compressed objects within 3 object streams
  54 named destinations out of 1000 (max. 500000)
  122 words of extra memory for PDF output out of 10000 (max. 10000000)
 
